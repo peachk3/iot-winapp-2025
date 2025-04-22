@@ -1,4 +1,4 @@
-namespace SyntaxWinApp02
+ï»¿namespace SyntaxWinApp02
 {
     public partial class FrnMain : Form
     {
@@ -9,14 +9,14 @@ namespace SyntaxWinApp02
 
         private void BtnMsg_Click(object sender, EventArgs e)
         {
-            // ¿¬»êÀÚ : =, +, -, *, /, %, ^, +=, -=., *=
+            // ì—°ì‚°ìž : =, +, -, *, /, %, ^, +=, -=., *=
             // &&, ||, &, |, ^, !
             int val = 2 ^ 10;
 
             int result = 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2 * 2;
 
-            //MessageBox.Show(((3 > 2) && (10 < 9)).ToString(), "¾Ë¸²", MessageBoxButtons.OK);
-            MessageBox.Show(result.ToString(), "¾Ë¸²", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //MessageBox.Show(((3 > 2) && (10 < 9)).ToString(), "ì•Œë¦¼", MessageBoxButtons.OK);
+            MessageBox.Show(result.ToString(), "ì•Œë¦¼", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }
