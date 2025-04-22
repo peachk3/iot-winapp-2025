@@ -222,7 +222,7 @@ IoT 개발자 C#/WinApp 리포지토리 2025
 
 ### C# 문법
 - 기본 문법 - C++, Java와 동일. C++과의 차이점만 비교
-    1. 기본구조 및 주석 - [소스](./day02/Day02Study/SyntaxWinApp01/FrnMain.cs)
+    1. 기본구조 및 주석 - [소스](./day02/Day02Study/ConsoleApp2/Program.cs)
         - 네임스페이스, 클래스, 메서드
 
         ```cs
@@ -250,7 +250,7 @@ IoT 개발자 C#/WinApp 리포지토리 2025
             }
         }
         ```
-    2. 자료형 및 변수, Nullable
+    2. 자료형 및 변수, Nullable - [소스](./day02/Day02Study/SyntaxWinApp01/FrnMain.cs)
         - 변수 사용은 C++과 동일
         - 자료형도 C++ 유사, 클래스형은 차이 있음
         - 닷넷타입은 여러 언어에서 공통으로 사용 위해서 추가된 기능
@@ -259,29 +259,36 @@ IoT 개발자 C#/WinApp 리포지토리 2025
             - 지역변수만 가능(전역변수 사용불가)
             - 한 번 타입이 지정되면 다른 타입으로 변경 불가
 
-    3. 연산자
+    3. 연산자 - [소스](./day02/Day02Study/SyntaxWinApp02/FrnMain.cs)
         - C, C++ 과 동일! 패스!!
 
-    4. 분기문, 반복문
+    4. 분기문, 반복문 - [소스](./day02/Day02Study/SyntaxWinApp03/FrmMain.cs)
         - if문
         - switch문
         - for문
         - foreach는 컬렉션에서 
         - while문
+
 ## 3일차
+
+### 한글 문제
+- 콘솔 > Program.cs : UTF8 BOM 저장
+- 윈앱 > FrmMain.cs : EUC-KR(CP949) -> 깃허브에서 한글이 깨져서 나옴
+
 
 ### C# 문법
 - 기본 문법
-    5. 문자열 처리
-    6. 클래스와 객체, 메서드
-    7. 접근제어자
-    9. 상속, 다형성, 추상클래스, 인터페이스
-    10. 예외처리
-    11. 컬렉션
-    12. 파일입출력
-    13. 델리게이트, 이벤트
-    14. 람다식
-    15. LINQ
+    1. 문자열 처리 - [소스](./day02/Day02Study/SyntaxWinApp04/FrmMain.cs)
+
+    2. 클래스와 객체, 메서드
+    3. 접근제어자
+    4. 상속, 다형성, 추상클래스, 인터페이스
+    5. 예외처리
+    6. 컬렉션
+    7. 파일입출력
+    8. 델리게이트, 이벤트
+    9. 람다식
+    10. LINQ
     16. 비동기
     17. 속성
     18. 제네릭
