@@ -182,9 +182,9 @@ IoT 개발자 C#/WinApp 리포지토리 2025
 
 15. 두 개 이상의 컨트롤 선택 후 Ctrl 키 누른 상태에서 드래그하면 한꺼번에 그룹으로 복사
 
-### 윈앱 컨트롤
+### 윈앱 컨트롤 1
 - Button : 마우스 클릭 위한 컨트롤
-    - (Name) : 소스코드상에서 접근, 사용
+    - `(Name)` : 소스코드상에서 접근, 사용\
     - Enabled : 사용여부
     - Location : 폼 상의 위치 (x, y)
     - Size : 버튼 크기 (w, h)
@@ -201,9 +201,14 @@ IoT 개발자 C#/WinApp 리포지토리 2025
 - `TextBox` : 텍스트 입력을 위한 컨트롤
     - 보통 Txt~ 로 시작
     - Button 컨트롤과 동일
+    - BorderStyle : 컨트롤 테두리 속성 변경
+        - None : 테두리 없음
+        - FixedSingle : 검은색 테두리
+        - Fixed3D : 입체감 있는 테두리
     - MaxLength : 최대 몇 자까지 적을 수 있는지
     - Multiline : 여러줄 사용여부. true가 되어야 높이 조절 가능
     - PlaceholderText : 입력 전 입력 내용 표시
+    - ReadOnly : 입력 가능 여부, true는 입력불가
     - **TextChanged** : 글자가 변경되면 발생하는 이벤트
     - **KeyPress** : 키보드 입력이 생기면 발생하는 이벤트
 
@@ -269,7 +274,12 @@ IoT 개발자 C#/WinApp 리포지토리 2025
         - foreach는 컬렉션에서 
         - while문
 
+        <img src="./image/cs0003.png" width="600">
+
 ## 3일차
+
+### Visual Studio Tip
+- 가장 많이 사용할 단축키 : Alt + Enter
 
 ### 한글 문제
 - 한글 깨지는 문제
@@ -280,14 +290,42 @@ IoT 개발자 C#/WinApp 리포지토리 2025
     - VS Code > 오른쪽 하단 상태표시줄 UTF-8 클릭 인코딩하여 다시 열기 또는 인코딩하여 저장 실행
     - VS > 다른 이름으로 저장 > 인코딩하여 저장 > UTF-8 선택 저장
 
+### 윈앱 컨트롤 2
+- 모든 컨트롤은 `Control` 클래스를 상속
+- `MaskedTextBox` : 사용자에게 주어진 형태로만 입력을 하도록 강제하는 텍스트 입력 컨트롤
+    - 텍스트박스와 동일하게 Txt ~ 로 시작
+    - Button 컨트롤과 속성 동일
+    - Mask : 사용자에게 입력을 제약할 포맷
+
+- `GroupBox` : 관련 있는 컨트롤들을 묶어주는 컨트롤
+    - 이름을 0.1% 정도 변경
+    - Button 컨트롤과 속성 동일
+    - Text 속성만 사용
+
+- Button 이미지 추가
+    - 
+
 ### C# 문법
 - 기본 문법
     1. 문자열 처리 - [소스](./day02/Day02Study/SyntaxWinApp04/FrmMain.cs)
         - 콘솔에서 입력되는 값 -> 모두 문자열
         - 윈앱에서 TextBox에서 입력되는 값 -> 모두 문자열
-        
-    2. 클래스와 객체, 메서드
+
+        <img src="./image/cs0004.png" width="600">
+
+    2. 클래스와 객체, 메서드, 속성
+        - 객체를 생성하는 틀
+        - 명사(멤버변수, 속성), 동사(멤버메서드)
+        - Get/Set
+
     3. 접근제어자
+        - `private` : 클래스 내에서만 접근 가능
+        - `public` : 어디서나 접근 가능
+        - protected : 내부, 자식 클래스에서만 접근 가능
+        - `internal` : 동일한 네임스페이스에서 public
+        - internal protected : 동일한 네임스페이스에서 protected 기능
+        - internal은 최근에 자동 생성에서 자주 사용되고 있음
+
     4. 상속, 다형성, 추상클래스, 인터페이스
     5. 예외처리
     6. 컬렉션
