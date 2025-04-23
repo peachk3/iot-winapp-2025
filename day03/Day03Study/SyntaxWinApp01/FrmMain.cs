@@ -9,20 +9,21 @@ namespace SyntaxWinApp01
 
         private void BtnCheck_Click(object sender, EventArgs e)
         {
-            // 기본생성자
-            Person peachk = new Person();
-            peachk.Name = TxtName.Text.Trim();
-            peachk.Age = int.Parse(TxtAge.Text.Trim());
-            peachk.Gender = char.Parse(TxtGender.Text.Trim());
-            peachk.Phone = TxtPhone.Text.Trim();
+            // 기본 생성자
+            Person hugo = new Person();
+            hugo.Name = TxtName.Text.Trim();
+            hugo.Age = int.Parse(TxtAge.Text.Trim());
+            
+            hugo.Gender = char.Parse(TxtGender.Text.Trim());
+            hugo.Phone = TxtPhone.Text.Trim();
 
             // 매개변수 생성자
-            Person hugo = new Person("유고", 40, 'F', "010-0000-0000");
+            Person ashely = new Person("애슐리", 42, 'F', "010-9839-7777");
 
-            TxtResult.Text += peachk.ToString();
-            peachk.GetUp();
-            peachk.GoToSchool();
-
+            TxtResult.Text = hugo.ToString();
+            hugo.GetUp();
+            hugo.GoToSchool();
+            
             // static일 경우는 객체를 생성하지 않음
             Person.GetNumber();
         }
