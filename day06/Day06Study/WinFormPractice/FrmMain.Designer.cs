@@ -36,7 +36,6 @@
             LblTitle = new Label();
             TxtTitle = new TextBox();
             LblContent = new Label();
-            TxtResult = new TextBox();
             BtnCheck = new Button();
             dateTimePicker1 = new DateTimePicker();
             BtnSearch = new Button();
@@ -122,15 +121,6 @@
             LblContent.TabIndex = 2;
             LblContent.Text = "일정 내용";
             // 
-            // TxtResult
-            // 
-            TxtResult.Location = new Point(18, 271);
-            TxtResult.Multiline = true;
-            TxtResult.Name = "TxtResult";
-            TxtResult.ScrollBars = ScrollBars.Vertical;
-            TxtResult.Size = new Size(477, 67);
-            TxtResult.TabIndex = 3;
-            // 
             // BtnCheck
             // 
             BtnCheck.Location = new Point(420, 192);
@@ -184,7 +174,6 @@
             Controls.Add(BtnSearch);
             Controls.Add(BtnCheck);
             Controls.Add(TxtContent);
-            Controls.Add(TxtResult);
             Controls.Add(LblContent);
             Controls.Add(TxtTitle);
             Controls.Add(LblTitle);
@@ -213,7 +202,6 @@
         private Label LblTitle;
         private TextBox TxtTitle;
         private Label LblContent;
-        private TextBox TxtResult;
         private Button BtnCheck;
         private DateTimePicker dateTimePicker1;
         private Button BtnSearch;
