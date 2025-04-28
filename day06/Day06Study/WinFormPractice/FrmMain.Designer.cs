@@ -41,6 +41,7 @@
             BtnSearch = new Button();
             TblSch = new DataGridView();
             TxtContent = new TextBox();
+            BtnDelete = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)TblSch).BeginInit();
             SuspendLayout();
@@ -146,6 +147,7 @@
             BtnSearch.TabIndex = 4;
             BtnSearch.Text = "일정 검색";
             BtnSearch.UseVisualStyleBackColor = true;
+            BtnSearch.Click += BtnSearch_Click;
             // 
             // TblSch
             // 
@@ -164,11 +166,21 @@
             TxtContent.Size = new Size(220, 118);
             TxtContent.TabIndex = 3;
             // 
+            // BtnDelete
+            // 
+            BtnDelete.Location = new Point(340, 357);
+            BtnDelete.Name = "BtnDelete";
+            BtnDelete.Size = new Size(75, 23);
+            BtnDelete.TabIndex = 7;
+            BtnDelete.Text = "일정 삭제";
+            BtnDelete.UseVisualStyleBackColor = true;
+            // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(589, 561);
+            Controls.Add(BtnDelete);
             Controls.Add(TblSch);
             Controls.Add(dateTimePicker1);
             Controls.Add(BtnSearch);
@@ -207,5 +219,6 @@
         private Button BtnSearch;
         private DataGridView TblSch;
         private TextBox TxtContent;
+        private Button BtnDelete;
     }
 }

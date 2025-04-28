@@ -27,6 +27,7 @@ namespace WinFormPractice
             }
         }
 
+
         private void BtnCheck_Click(object sender, EventArgs e)
         {
             DateTime schDate = CalToDoList.SelectionStart;
@@ -38,13 +39,14 @@ namespace WinFormPractice
 
             scheduleTable.Rows.Add(schDate, schTitle, schContent, importance);
 
-            TxtResult.Text = $"{schDate:yyyy-MM-dd}\r\n{schTitle}\r\n{schContent}\r\n{importance}";
+            //TxtResult.Text = $"{schDate:yyyy-MM-dd}\r\n{schTitle}\r\n{schContent}\r\n{importance}";
 
             CalendarBolding();
         }
 
-
-        private void CalendarBolding(){
+        // 일정이 있는 날짜에 굵게 표시
+        private void CalendarBolding()
+        {
 
             List<DateTime> boldDates = new List<DateTime>();
 
@@ -60,5 +62,10 @@ namespace WinFormPractice
             CalToDoList.UpdateBoldedDates();
         }
 
+        // 일정 검색
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
