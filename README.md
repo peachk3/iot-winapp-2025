@@ -926,7 +926,7 @@ IoT 개발자 C#/WinApp 리포지토리 2025
         - 실행 결과 리더 객체 : MySqlDataReader(쿼리 결과 데이터)
         - 트랜잭션 객체 : 옵션. 트랜잭션 처리시 필요
 
-    <img src="./image/cs0016.png" width="600">
+        <img src="./image/cs0016.png" width="600">
 
 
 ## 8일차
