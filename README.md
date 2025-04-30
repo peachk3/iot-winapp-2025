@@ -966,6 +966,7 @@ IoT 개발자 C#/WinApp 리포지토리 2025
 ### MahApps.Metro 프레임워크
 - 공식사이트 - https://mahapps.com/
     - 최소한 노력으로 Metro UI/Modern UI를 적용시킬수 있는 프레임워크
+    - 2011년 개발 시작, 2014년 배포. 현재 버전 2.4.10 
     - Metro UI, Modern UI - MS에서 시작한 디자인 스타일
     - 깔끔하고 입체감을 최소화 시킴
 
@@ -978,6 +979,20 @@ IoT 개발자 C#/WinApp 리포지토리 2025
     3. https://github.com/MahApps/IconPacks.Browser
         - IconPacks.Browser-net8-v2.0.0.zip 다운로드
     4. App.xaml에 필요한 리소스 코드 복붙
+
+        ```xml
+        <Application.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                <!-- MahApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive! -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <!-- Theme setting -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Application.Resources>
+        ```
     5. MainWindow.xaml.cs
         - Window -> MetroWindow 변경
     6. MainWindow.xaml
@@ -999,9 +1014,75 @@ IoT 개발자 C#/WinApp 리포지토리 2025
 
 
 ## 9일차
+### MahApps.Metro 프레임워크
+- 컨트롤 사용법 - [소스](./day09/Day09Study/WpfStudyApp01/MainWindow.xaml)
+    - ProgressBar, MetroProgressBar, ProgressRing
+    - TabControl
 
-### C# 응용 - WPF
-- WPF 기본
+### VS Tip
+- 프로젝트는 제거해도 폴더와 파일은 그대로 존재
+    - 윈도우 탐색기에서 폴더 삭제 요망
+
+### WPF UI 프레임워크
+- 개요
+    - Fluent UI라 이름의 Modern UI의 한 스타일 UI 프레임워크
+    - 2021년 1.0 배포, 현재 버전 4.0.2
+
+- 기본 사용법 - [소스](./day09/Day09Study/WpfStudyApp02/MainWindow.xaml)
+    - NuGet 패키지 관리자 > WPF-UI 검색 후 설치
+    - VS Extension for WPW UI
+        - 메뉴 확장 > 확장 관리
+        - WPF-UI 검색 후 설치
+        - VS 종료
+        - VSIS Installer 시작 > Modify
+    - VS Propject > WPF UI 프로젝트 선택
+    - MainWindow.xaml을 추가 생성
+    - App.xaml.cs 오픈 - [소스](./day09/Day09Study/WpfStudyApp02/App.xaml.cs)
+    ```cs
+        private static readonly IHost _host = Host
+            .CreateDefaultBuilder()
+            .ConfigureAppConfiguration(c => { c.SetBasePath(Path.GetDirectoryName(AppContext.BaseDirectory)); })
+            .ConfigureServices((context, services) =>
+            {
+                // throw new NotImplementedException("No service or window was registered.");
+                // Singleton 디자인패턴 방식으로 MainWindow를 등록
+                services.AddSingleton<MainWindow>();
+            }).Build();`
+
+        private async void OnStartup(object sender, StartupEventArgs e)
+        {
+            await _host.StartAsync();
+            // ..MainWindwo 인스턴스 생성
+            var mainWindow = _host.Services.GetRequiredService<MainWindow>();
+            mainWindow.Show();
+        }
+    ```
+
+    - MainWindow.xaml xmlns:ui 추가. App.xaml과 동일
+        ```xml
+        <xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml">
+        ```
+
+    - MainWindow.xaml Window -> ui:FluentWindow 변경
+    - Grid 내 타이틀바 추가
+        ```xml
+        <ui:TitleBar Title="WPF UI App"/>
+        ```
+
+    - Theme를 Dark로 했을 경우
+        - Window 전체 Background를 어두운 색으로 지정 후 작성
+
+    - 실행결과
+
+        <img src="./image/cs0022.png" width="600">
+
+        Dark Theme
+        <br>
+
+        <img src="./image/cs0023.png" width="600">
+
+        Light Theme
+
 
 ## 10일차
 
