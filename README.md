@@ -1108,3 +1108,11 @@ IoT 개발자 C#/WinApp 리포지토리 2025
 
     - 일정 수정
     - 일정 삭제
+
+<br>
+
+#### 2. 미니 게임 만들기
+- tic tac toe
+
+- memory game
+
