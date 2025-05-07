@@ -32,7 +32,6 @@
             panelGameArea = new Panel();
             BtnTicTacToe = new Button();
             BtnMemory = new Button();
-            BtnRps = new Button();
             SuspendLayout();
             // 
             // panelGameArea
@@ -46,7 +45,7 @@
             // 
             BtnTicTacToe.Location = new Point(12, 6);
             BtnTicTacToe.Name = "BtnTicTacToe";
-            BtnTicTacToe.Size = new Size(88, 23);
+            BtnTicTacToe.Size = new Size(142, 23);
             BtnTicTacToe.TabIndex = 1;
             BtnTicTacToe.Text = "TicTacToe";
             BtnTicTacToe.UseVisualStyleBackColor = true;
@@ -54,30 +53,19 @@
             // 
             // BtnMemory
             // 
-            BtnMemory.Location = new Point(106, 6);
+            BtnMemory.Location = new Point(227, 6);
             BtnMemory.Name = "BtnMemory";
-            BtnMemory.Size = new Size(88, 23);
+            BtnMemory.Size = new Size(147, 23);
             BtnMemory.TabIndex = 1;
             BtnMemory.Text = "Memory";
             BtnMemory.UseVisualStyleBackColor = true;
-            BtnMemory.Click += BtnTicTacToe_Click;
-            // 
-            // BtnRps
-            // 
-            BtnRps.Location = new Point(200, 6);
-            BtnRps.Name = "BtnRps";
-            BtnRps.Size = new Size(88, 23);
-            BtnRps.TabIndex = 1;
-            BtnRps.Text = "RPS";
-            BtnRps.UseVisualStyleBackColor = true;
-            BtnRps.Click += BtnTicTacToe_Click;
+            BtnMemory.Click += BtnMemory_Click;
             // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(731, 414);
-            Controls.Add(BtnRps);
+            ClientSize = new Size(386, 414);
             Controls.Add(BtnMemory);
             Controls.Add(BtnTicTacToe);
             Controls.Add(panelGameArea);
@@ -93,6 +81,5 @@
         private Panel panelGameArea;
         private Button BtnTicTacToe;
         private Button BtnMemory;
-        private Button BtnRps;
     }
 }
