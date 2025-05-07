@@ -15,9 +15,9 @@
         }
         private void LoadImages()
         {
-            // 리소스에서 X, O 이미지를 불러옴
-            //xImage = Image.FromFile("path_to_your_images_folder/x.png");
-            //oImage = Image.FromFile("path_to_your_images_folder/o.png");
+            //리소스에서 X, O 이미지를 불러옴
+            xImage = Image.FromFile("image/mini_X.png");
+            oImage = Image.FromFile("image/mini_O.png");
         }
 
         private void CreateBoard()
@@ -31,6 +31,7 @@
                     btn.Size = new Size(buttonSize, buttonSize);
                     btn.Location = new Point(col * buttonSize, row * buttonSize);
                     btn.Click += Button_Click; // 클릭 이벤트 연결
+                    btn.BackgroundImageLayout = ImageLayout.Stretch; // 이미지가 버튼에 맞게 조정되도록 설정
                     buttons[row, col] = btn;
                     Controls.Add(btn);
                 }
@@ -39,12 +40,13 @@
         private void Button_Click(object sender, EventArgs e)
         {
             Button clickedButton = sender as Button;
-            if (clickedButton.Text == "") // 이미 선택된 칸은 클릭하지 않도록
+
+            if (clickedButton.BackgroundImage == null) // 이미 선택된 칸은 클릭하지 않도록
             {
-                clickedButton.Text = isPlayerX ? "X" : "O"; // X 또는 O 표시
+                clickedButton.BackgroundImage = isPlayerX ? xImage : oImage; // X 또는 O 표시
                 if (CheckWin()) // 승리 조건 체크
                 {
-                    MessageBox.Show($"{(isPlayerX ? "X" : "O")} 승리!");
+                    MessageBox.Show($"{(isPlayerX ? "X" : "O")} 승리!", "게임 종료");
                     ResetBoard(); // 게임 종료 후 보드 초기화
                 }
                 isPlayerX = !isPlayerX; // 플레이어 전환
@@ -57,16 +59,16 @@
             for (int i = 0; i < 3; i++)
             {
                 // 가로
-                if (buttons[i, 0].Text != "" && buttons[i, 0].Text == buttons[i, 1].Text && buttons[i, 1].Text == buttons[i, 2].Text)
+                if (buttons[i, 0].BackgroundImage != null && buttons[i, 0].BackgroundImage == buttons[i, 1].BackgroundImage && buttons[i, 1].BackgroundImage == buttons[i, 2].BackgroundImage)
                     return true;
                 // 세로
-                if (buttons[0, i].Text != "" && buttons[0, i].Text == buttons[1, i].Text && buttons[1, i].Text == buttons[2, i].Text)
+                if (buttons[0, i].BackgroundImage != null && buttons[0, i].BackgroundImage == buttons[1, i].BackgroundImage && buttons[1, i].BackgroundImage == buttons[2, i].BackgroundImage)
                     return true;
             }
             // 대각선
-            if (buttons[0, 0].Text != "" && buttons[0, 0].Text == buttons[1, 1].Text && buttons[1, 1].Text == buttons[2, 2].Text)
+            if (buttons[0, 0].BackgroundImage != null && buttons[0, 0].BackgroundImage == buttons[1, 1].BackgroundImage && buttons[1, 1].BackgroundImage == buttons[2, 2].BackgroundImage)
                 return true;
-            if (buttons[0, 2].Text != "" && buttons[0, 2].Text == buttons[1, 1].Text && buttons[1, 1].Text == buttons[2, 0].Text)
+            if (buttons[0, 2].BackgroundImage != null && buttons[0, 2].BackgroundImage == buttons[1, 1].BackgroundImage && buttons[1, 1].BackgroundImage == buttons[2, 0].BackgroundImage)
                 return true;
 
             return false;

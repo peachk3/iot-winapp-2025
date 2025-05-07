@@ -78,7 +78,6 @@ namespace MiniGame
 
         private void CreateBoard(int totalCards)
         {
-
             int columns = (int)Math.Ceiling(Math.Sqrt(totalCards));
             int rows = (int)Math.Ceiling((double)totalCards / columns);
             int btnSize = 80;
