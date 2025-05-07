@@ -1086,4 +1086,25 @@ IoT 개발자 C#/WinApp 리포지토리 2025
 
 ## 10일차
 
-### 코딩테스트
+### Toy Project
+#### 1. 일정 관리 프로그램
+- 기본 화면
+    <img src="./ToyProject/image/sch01.png">
+
+- 입력 화면
+    <img src="./ToyProject/image/sch03.png"> 
+    <br>
+
+- 기능
+    - 일정이 입력된 날에는 달력에 굵은 글씨로 표시
+    - 일정 분류, 중요도 미선택시 자동 입력 (분류 - 업무, 중요도 - 보통)
+
+    <img src="./ToyProject/image/sch02.png">
+
+    - 날짜별 필터링 검색
+    - 일정 분류별 필터링 검색
+
+    <img src="./ToyProject/image/sch04.png">
+
+    - 일정 수정
+    - 일정 삭제
